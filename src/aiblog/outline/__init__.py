@@ -1,0 +1,1 @@
+"""Outline strategies. Each produces a structured skeleton from a brief."""
