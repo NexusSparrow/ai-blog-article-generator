@@ -1,0 +1,1 @@
+"""Core interfaces and cross-cutting primitives."""
