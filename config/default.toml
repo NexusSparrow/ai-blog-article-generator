@@ -1,0 +1,41 @@
+[app]
+name = "AI Blog Article Generator"
+version = "0.6.3"
+log_level = "INFO"
+log_dir = "logs"
+output_dir = "generated_articles"
+
+[provider]
+default = "openai"
+timeout_seconds = 90
+max_retries = 4
+
+[provider.openai]
+model = "gpt-4o-mini"
+base_url = "https://api.openai.com/v1"
+keyring_service = "aiblog.openai"
+
+[provider.anthropic]
+model = "claude-3-5-sonnet-latest"
+base_url = "https://api.anthropic.com/v1"
+keyring_service = "aiblog.anthropic"
+
+[provider.local]
+model = "qwen2.5-7b-instruct"
+base_url = "http://127.0.0.1:11434/v1"
+keyring_service = "aiblog.local"
+
+[outline]
+strategy = "howto"
+target_words = 1400
+sections = 6
+
+[seo]
+enabled = true
+keyword_density_max = 0.028
+inject_meta_description = true
+slug_max_len = 64
+
+[export]
+formats = ["markdown", "html"]
+frontmatter = true
